@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>NASA Internship Work </h1>
+    <h1>NASA Internship Summer 2023 </h1>
     <!-- Navigation bar -->
     <nav>
       <ul>
@@ -24,29 +24,76 @@
   <main>
     <section id="overview">
       <h2>Overview</h2>
-      <p>This project was pretty neat and cool and also epic</p>
+      <p>I was lucky enough to intern at NASA's Glenn Research Center for the summer of 2023 as a test engineering intern. 
+         I worked at Glenn's Power Systems Facility where novel power systems for space applications are developed. 
+         I contributed to a project known as AMPS (Advanced Modular Power System) by creating a GUI to display system data. </p>
     </section>
     
     <section id="motivation">
         <h2>Motivation</h2>
-        <p>This project was pretty neat and cool and also epic</p>
+        <p>The AMPS project had a previous solution for the system data GUI. A display with an embedded microcontroller 
+           was being used, however, these displays proved to be unreliable. A failed display is pictured below (left). </p> <br>
+           
+           <img src="media\AMPS_failed_display.jpg" alt="Failed display" style="width: 600px; height: 400px;"> <br>
+           
+           <p>The AMPS team wanted a new browser based GUI running on a Raspberry Pi. I was assigned the task of designing one from scratch.</p>
     </section>
 
     <section id="design">
-        <h2>Design</h2>
-        <p>This project was pretty neat and cool and also epic</p>
+        <h2>Design</h2> 
+        <p>Major challenges of this project included: <br>
+          <br>
+            - Communicating with DAQ units and reading valid sensor values <br>
+            - Parsing DAQ readings and interpreting if they are within normal operating ranges <br>
+            - Displaying values on a GUI which can be easily interpreted by a user</p>
+      <img src="media\AMPS_display_hardware.jpg" alt="self picture" style="width:435;height:435px; display: inline;">
+      <p>
+      The final design is depicted above and below. A Raspberry Pi was used to communicate with two Omega D6400 DAQ units. 
+      An intermediary device was used to convert from USB to the RS485 protocol in order to read and write from the DAQs.
+      <br>
+      A timer relay was also used to function as a watchdog timer which would shut off if the system froze, or if the system 
+      detected a sensor value out outside of the normal operating range. 
+      <br> 
+      <br>
+      The Raspberry Pi was connected to and powered by a touchscreen display.
+    </p>
+
+      <img src="media\AMPS_display_schematic.jpg" alt="self picture" style="width:650;height:650px; display: inline;">
+
+      <p>
+      Javascript and Python were used for reading, parsing and displaying data. Below is a simple diagram showing
+      how the MQTT protocol was used to interface Python with Javascript.  
+      </p>
+      <img src="media\AMPS_display_software.jpg" alt="self picture" style="width:400;height:400px; display: inline;">
+
+
     </section>
 
     <section id="results">
         <h2>Results</h2>
-        <p>This project was pretty neat and cool and also epic</p>
+        <img src="media\AMPS_display_result1.jpg" alt="self picture" style="width:650;height:650px; display: inline;">
+        <p>The project was successfully completed and fully integrated into the AMPS rack. 
+          <br>
+          <br>
+          In instances when sensor values stray beyond user defined limits, the system will respond by placing itself into an alarm state.
+          In this alarm state, the timer relay controlled by the Raspberry Pi is opened and the system will shut down. 
+        <br>
+        <br>
+        The system will remain in this state until the sensor value returns to normal and a user clears the alarm state. 
+        This behavior is demonstrated below.
+        </p>
+        <video width="700" height="400" controls>
+          <source src="media\AMPS_alarm_demo.mp4" type="video/mp4">
+          <source src="media\AMPS_alarm_demo.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
     </section>
 
 
   </main>
 
   <footer>
-    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    <!-- <p>&copy; 2023 My Portfolio. All rights reserved.</p> -->
   </footer>
   <script src="script.js"></script>
 </body>
