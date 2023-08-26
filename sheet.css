@@ -11,7 +11,7 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #ababab;
+    background-color: #7186d1;
     padding: 100px;
   }
   
@@ -39,7 +39,7 @@
     display: inline-block;
     padding: 8px 16px;
     background-color: #292929;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
     
     
@@ -72,6 +72,7 @@
     font-size: 36px;
     margin-bottom: 10px;
   }
+
   
   h2 {
     font-size: 24px;
@@ -100,7 +101,36 @@
     border: 1px solid #ddd;
     padding: 20px;
     background-color: #fff;
+    border-radius: 30px;
   }
+
+  #overview {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+
+  #motivation {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+  #design {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+
+  #results {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+
   
   .project h3 {
     font-size: 18px;
